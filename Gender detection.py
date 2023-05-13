@@ -11,12 +11,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import random
 import cv2
-import os
+import os 
 import glob
 
 
 # initial parameters
-epochs = 100
+epochs = 100                 #50 is enough
 lr = 1e-3
 batch_size = 64
 img_dims = (96,96,3)
@@ -183,27 +183,13 @@ H= model.fit_generator(aug.flow(trainX, trainY, batch_size=batch_size),
 # save the model to disk
 model.save('gender_detection.model')
 
-
-
-
+#you can save the model by .model or .h5
 #save model
 #model.save('D:\6th sem\Gender recognition\gender_detection.h5')
 
 
 
-# # plot training/validation loss/accuracy
-# plt.style.use("ggplot")
-# plt.figure()
-# N = epochs
-# plt.plot(np.arange(0,N), H.history["loss"], label="train_loss")
-# plt.plot(np.arange(0,N), H.history["val_loss"], label="val_loss")
-# plt.plot(np.arange(0,N), H.history["acc"], label="train_acc")
-# plt.plot(np.arange(0,N), H.history["val_acc"], label="val_acc")
 
-# plt.title("Training Loss and Accuracy")
-# plt.xlabel("Epoch #")
-# plt.ylabel("Loss/Accuracy")
-# plt.legend(loc="upper right")
 
 
 
